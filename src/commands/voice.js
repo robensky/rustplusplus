@@ -37,6 +37,14 @@ module.exports = {
             .addSubcommand(subcommand => subcommand
                 .setName('leave')
                 .setDescription(client.intlGet(guildId, 'commandsVoiceLeaveDesc')))
+			.addSubcommand(subcommand => subcommand
+				.setName('say')
+				.setDescription(client.intlGet(guildId, 'commandsVoiceSay'))
+				.addStringOption(option =>
+					option.setName('text')
+						.setDescription('The input to echo back')
+						.setRequired(true))
+			)
 
     },
 
@@ -85,6 +93,14 @@ module.exports = {
                                 id: interaction.member.voice.channel.id,
                                 guild: interaction.member.guild.name
                             }));
+                }
+            } break;
+
+			case 'say': {
+                const connection = getVoiceConnection(interaction.guild.id);
+                if (connection) {
+                    const string = interaction.options.getString('text') ?? 'Hello';
+                    await DiscordMessages.sendVoiceMessage(interaction.guildId, string);
                 }
             } break;
 

@@ -255,6 +255,7 @@
     "commandsVoiceJoinDesc": "Joins the Voicechannel",
     "commandsVoiceLeave": "Leaving voice channel {name} with the ID {id} in guild {guild}",
     "commandsVoiceLeaveDesc": "Leaves the Voicechannel",
+	"commandsVoiceSay": "Tells something via voice",
     "commandsVoiceMale": "Male",
     "commandsVoiceMaleDescription": "Sets the voiceactor gender to Male",
     "commandsVoiceNotInVoice": "You are not in a voicechannel",
