@@ -100,8 +100,11 @@ module.exports = {
                 const connection = getVoiceConnection(interaction.guild.id);
                 if (connection) {
                     const string = interaction.options.getString('text') ?? 'Hello';
-                    await DiscordMessages.sendVoiceMessage(interaction.guildId, string);
-                }
+					await DiscordVoice.sendDiscordVoiceMessage(interaction.guildId, string);
+
+					client.intlGet(interaction.guildId, "Message sent for broadcast!");
+                } 
+				else client.intlGet(interaction.guildId, "Bot is not in the voicechat!");
             } break;
 
             default: {
