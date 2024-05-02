@@ -102,9 +102,10 @@ module.exports = {
                     const string = interaction.options.getString('text') ?? 'Hello';
 					await DiscordVoice.sendDiscordVoiceMessage(interaction.guildId, string);
 
-					client.intlGet(interaction.guildId, 'commandsVoiceSent');
+					await DiscordMessages.sendVoiceMessage(interaction,
+						client.intlGet(interaction.guildId, 'commandsVoiceSent'));
                 } 
-				else client.intlGet(interaction.guildId, 'commandsVoiceNotIn');
+				else await DiscordMessages.sendVoiceMessage(interaction, client.intlGet(interaction.guildId, 'commandsVoiceNotIn'));
             } break;
 
             default: {
