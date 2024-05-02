@@ -256,6 +256,8 @@
     "commandsVoiceLeave": "Leaving voice channel {name} with the ID {id} in guild {guild}",
     "commandsVoiceLeaveDesc": "Leaves the Voicechannel",
 	"commandsVoiceSay": "Tells something via voice",
+	"commandsVoiceNotIn": "Bot is not in the voicechat!",
+	"commandsVoiceSent": "Message sent for broadcast!",
     "commandsVoiceMale": "Male",
     "commandsVoiceMaleDescription": "Sets the voiceactor gender to Male",
     "commandsVoiceNotInVoice": "You are not in a voicechannel",
