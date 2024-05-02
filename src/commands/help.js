@@ -19,7 +19,7 @@
 */
 
 const Builder = require('@discordjs/builders');
-
+const DiscordVoice = require('../discordTools/discordVoice.js');
 const DiscordMessages = require('../discordTools/discordMessages.js');
 
 module.exports = {
@@ -32,6 +32,8 @@ module.exports = {
 	},
 
 	async execute(client, interaction) {
+		await DiscordVoice.sendDiscordVoiceMessage(interaction.guildId, "Help");
+		console.log("Testing");
 		const verifyId = Math.floor(100000 + Math.random() * 900000);
 		client.logInteraction(interaction, verifyId, 'slashCommand');
 
