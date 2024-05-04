@@ -108,7 +108,7 @@ module.exports = {
                                 time: afkTime
                             });
                             rustplus.sendInGameMessage(str);
-							DiscordVoice.sendDiscordVoiceMessage(guildId, str.slice(0, -2) + ' beers');
+							DiscordVoice.sendDiscordVoiceMessage(guildId, str.slice(0, -3) + ' beers');
                             rustplus.log(client.intlGet(null, 'infoCap'), str);
                         }
                     }
