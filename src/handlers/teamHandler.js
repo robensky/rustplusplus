@@ -76,7 +76,11 @@ module.exports = {
                             guildId, serverId, Constants.COLOR_INACTIVE, str, player.steamId);
                         if (instance.generalSettings.deathNotify) rustplus.sendInGameMessage(str);
 
-						DiscordVoice.sendDiscordVoiceMessage(guildId, str);
+						const deathSuffixes = ["RIP Bozo", "Aimlabs is free btw", "Better luck next time!", "What is he doing? No idea.", "That was fucked up", "GG", "Ah shit.", "Go get them tiger."];
+						let randomLine = Math.floor(Math.random() * deathSuffixes.length * 2);
+						deathSuffixes[randomLine] === undefined ? deathSuffixes[randomLine] = '' : deathSuffixes[randomLine] = ". " + deathSuffixes[randomLine];
+
+						DiscordVoice.sendDiscordVoiceMessage(guildId, str + deathSuffixes[randomLine]);
 
                         rustplus.log(client.intlGet(null, 'infoCap'), str);
                         rustplus.updateDeaths(player.steamId, {
