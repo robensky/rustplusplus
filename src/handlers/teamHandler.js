@@ -95,7 +95,7 @@ module.exports = {
 							const strVoice = client.intlGet(guildId, 'playerJustWentAfkVoice', { name: player.name });
                             rustplus.sendInGameMessage(str);
 
-							DiscordVoice.sendDiscordVoiceMessage(guildId, str);
+							DiscordVoice.sendDiscordVoiceMessage(guildId, strVoice);
 
                             rustplus.log(client.intlGet(null, 'infoCap'), str);
                         }
