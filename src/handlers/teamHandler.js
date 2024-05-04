@@ -92,6 +92,7 @@ module.exports = {
                     if (player.isGoneAfk(playerUpdated)) {
                         if (instance.generalSettings.afkNotify) {
                             const str = client.intlGet(guildId, 'playerJustWentAfk', { name: player.name });
+							const strVoice = client.intlGet(guildId, 'playerJustWentAfkVoice', { name: player.name });
                             rustplus.sendInGameMessage(str);
 
 							DiscordVoice.sendDiscordVoiceMessage(guildId, str);
