@@ -93,6 +93,9 @@ module.exports = {
                         if (instance.generalSettings.afkNotify) {
                             const str = client.intlGet(guildId, 'playerJustWentAfk', { name: player.name });
                             rustplus.sendInGameMessage(str);
+
+							DiscordVoice.sendDiscordVoiceMessage(guildId, str);
+
                             rustplus.log(client.intlGet(null, 'infoCap'), str);
                         }
                     }
@@ -105,6 +108,7 @@ module.exports = {
                                 time: afkTime
                             });
                             rustplus.sendInGameMessage(str);
+							DiscordVoice.sendDiscordVoiceMessage(guildId, str);
                             rustplus.log(client.intlGet(null, 'infoCap'), str);
                         }
                     }
@@ -114,6 +118,7 @@ module.exports = {
                         await DiscordMessages.sendActivityNotificationMessage(
                             guildId, serverId, Constants.COLOR_ACTIVE, str, player.steamId);
                         if (instance.generalSettings.connectionNotify) await rustplus.sendInGameMessage(str);
+						DiscordVoice.sendDiscordVoiceMessage(guildId, str);
                         rustplus.log(client.intlGet(null, 'infoCap'),
                             client.intlGet(null, 'playerJustConnectedTo', {
                                 name: player.name,
@@ -127,6 +132,7 @@ module.exports = {
                         await DiscordMessages.sendActivityNotificationMessage(
                             guildId, serverId, Constants.COLOR_INACTIVE, str, player.steamId);
                         if (instance.generalSettings.connectionNotify) await rustplus.sendInGameMessage(str);
+						DiscordVoice.sendDiscordVoiceMessage(guildId, str);
                         rustplus.log(client.intlGet(null, 'infoCap'),
                             client.intlGet(null, 'playerJustDisconnectedFrom', {
                                 name: player.name,
