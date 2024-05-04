@@ -563,6 +563,7 @@
     "playerJustDisconnectedTracker": "{name} just disconnected from tracker {tracker}.",
     "playerJustReturned": "{name} just returned ({time}).",
     "playerJustWentAfk": "{name} just went AFK.",
+	"playerJustWentAfkVoice": "{name} just went AFK to grab a few beers.",
     "playerLeftTheTeam": "{name} left the team.",
     "playerNotPairedWithServer": "Leader command does not work because {name} is not paired with the server.",
     "players": "Players",
